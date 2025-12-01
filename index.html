@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeOpt | Optimize Your PC Vibe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="logo">
+            <i class="fa-solid fa-bolt pulse-icon"></i>
+            <span>VibeOpt</span>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="btn btn-primary btn-glow" id="header-cta">Start For Free</button>
+    </header>
+
+    <main id="landing-page">
+        
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="mint-glow-bg"></div>
+                <h1>Optimize the vibe <br> of your PC</h1>
+                <p class="subheading">AI-powered optimization that boosts FPS, stability, and responsiveness — effortlessly.</p>
+                
+                <div class="cta-group">
+                    <button class="btn btn-large btn-pulse" id="hero-cta">Start Free Optimization</button>
+                    <a href="#features" class="secondary-link">Or explore the features <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="pulse-line-visual">
+                    <svg viewBox="0 0 500 150" class="ecg-svg">
+                        <polyline points="0,75 100,75 120,20 140,130 160,75 500,75" fill="none" stroke="#58FFB4" stroke-width="3"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="features section-padding" id="features">
+            <div class="section-header">
+                <h2>Why VibeOpt?</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>AI Performance Boost</h3>
+                    <p>Smart AI scans your setup and applies instant optimization for smoother gameplay.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fa-solid fa-wave-square"></i></div>
+                    <h3>FPS Stabilizer</h3>
+                    <p>Reduce frame drops and get consistent performance in any game.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fa-solid fa-broom"></i></div>
+                    <h3>Auto PC Cleanup</h3>
+                    <p>Clean temporary files, fix startup apps, and reduce background load with one click.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing section-padding" id="pricing">
+            <div class="section-header">
+                <h2>Choose your performance level</h2>
+            </div>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <h3>Free</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Basic optimization</li>
+                        <li><i class="fa-solid fa-check"></i> Manual cleanup</li>
+                    </ul>
+                    <button class="btn btn-outline">Start Free</button>
+                </div>
+                <div class="plan-card recommended">
+                    <span class="badge">Recommended</span>
+                    <h3>Standard</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Full optimization</li>
+                        <li><i class="fa-solid fa-check"></i> Auto cleaning</li>
+                        <li><i class="fa-solid fa-check"></i> AI tuning</li>
+                    </ul>
+                    <button class="btn btn-primary">Upgrade</button>
+                </div>
+                <div class="plan-card">
+                    <h3>Pro</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Real-time FPS tuning</li>
+                        <li><i class="fa-solid fa-check"></i> Priority support</li>
+                    </ul>
+                    <button class="btn btn-outline">Go Pro</button>
+                </div>
+            </div>
+        </section>
+
+<section class="contact-section section-padding" id="contact">
+            <div class="section-header">
+                <h2>Need help? We're here.</h2>
+                <p class="subheading">Contact the VibeOpt team anytime regarding bugs, features, or plans.</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-form-wrapper">
+                    <form id="support-form">
+                        <div class="input-group">
+                            <label>Name</label>
+                            <input type="text" placeholder="Gamer Name" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Subject</label>
+                            <select>
+                                <option>Technical Support</option>
+                                <option>Billing Inquiry</option>
+                                <option>Bug Report</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Message</label>
+                            <textarea rows="5" placeholder="Describe your issue..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="support-info">
+                    <div class="info-card">
+                        <i class="fa-brands fa-discord"></i>
+                        <div class="info-text">
+                            <h4>Join Discord</h4>
+                            <p>Get instant help from the community.</p>
+                            <a href="#" class="mint-link">Join Server -></a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="info-text">
+                            <h4>Email Support</h4>
+                            <p>Direct line to our dev team.</p>
+                            <a href="mailto:support@vibeopt.com" class="mint-link">support@vibeopt.com</a>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fa-solid fa-signal"></i>
+                        <div class="info-text">
+                            <h4>Status Page</h4>
+                            <p>Check if systems are operational.</p>
+                            <span class="status-indicator"><span class="dot"></span> All Systems Operational</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="brand">
+                    <h4>VibeOpt</h4>
+                    <p>Optimize your digital experience.</p>
+                </div>
+                <div class="links">
+                    <a href="#home">Home</a>
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#contact">Support</a>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="copyright-bar">
+                <p>&copy; 2025 <strong>VibeOpt Inc.</strong> All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <div id="dashboard-ui" class="hidden">
+        
+        <aside class="sidebar">
+            <div class="logo small">
+                <i class="fa-solid fa-bolt pulse-icon"></i>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></li>
+                <li><i class="fa-solid fa-rocket"></i> <span>Optimizer</span></li>
+                <li><i class="fa-solid fa-broom"></i> <span>Cleanup</span></li>
+                <li><i class="fa-solid fa-desktop"></i> <span>FPS Monitor</span></li>
+                <li><i class="fa-solid fa-gear"></i> <span>Settings</span></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button class="btn-text" id="back-home">Log Out</button>
+            </div>
+        </aside>
+
+        <main class="dash-main">
+            <header class="top-bar">
+                <div class="welcome">Welcome back, <span class="glow-text">Gamer</span>.</div>
+                <div class="actions">
+                    <button class="btn btn-primary btn-sm">Upgrade</button>
+                    <div class="user-profile"><i class="fa-solid fa-user"></i></div>
+                </div>
+            </header>
+
+            <div class="dash-content">
+                <div class="card status-card">
+                    <div class="status-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="status-text">
+                        <h3>System Status: Stable</h3>
+                        <p>Your PC is running smoothly.</p>
+                    </div>
+                    <div class="indicators">
+                        <span class="tag green">CPU Normal</span>
+                        <span class="tag green">GPU Normal</span>
+                    </div>
+                </div>
+
+                <div class="usage-grid">
+                    <div class="card stat-card">
+                        <div class="card-head">
+                            <i class="fa-solid fa-microchip"></i> <span>CPU</span>
+                        </div>
+                        <div class="big-num">43%</div>
+                        <div class="sub-stat">67°C</div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="card-head">
+                            <i class="fa-solid fa-gamepad"></i> <span>GPU</span>
+                        </div>
+                        <div class="big-num">58%</div>
+                        <div class="sub-stat">71°C</div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="card-head">
+                            <i class="fa-solid fa-memory"></i> <span>RAM</span>
+                        </div>
+                        <div class="big-num">7.2GB</div>
+                        <div class="sub-stat">of 16GB</div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="card-head">
+                            <i class="fa-solid fa-hard-drive"></i> <span>Disk</span>
+                        </div>
+                        <div class="progress-bar"><div class="fill" style="width: 60%"></div></div>
+                        <div class="sub-stat">Healthy</div>
+                    </div>
+                </div>
+
+                <div class="optimizer-area">
+                    <button class="optimize-btn">
+                        <div class="inner-circle">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>OPTIMIZE<br>NOW</span>
+                        </div>
+                        <div class="pulse-ring"></div>
+                    </button>
+                    <p class="ai-mode">AI Smart Mode: <span class="mint">ON</span></p>
+                </div>
+            </div>
+        </main>
+
+        <aside class="right-panel">
+            <div class="panel-header">Live Monitor</div>
+            <div class="temp-sensors">
+                <div class="sensor">
+                    <span>CPU</span> <span class="val">67°C</span>
+                </div>
+                <div class="sensor">
+                    <span>GPU</span> <span class="val">71°C</span>
+                </div>
+            </div>
+            
+            <div class="live-graph-container">
+                <div class="graph-bars">
+                    <div class="bar" style="height: 40%"></div>
+                    <div class="bar" style="height: 60%"></div>
+                    <div class="bar" style="height: 30%"></div>
+                    <div class="bar" style="height: 80%"></div>
+                    <div class="bar" style="height: 50%"></div>
+                    <div class="bar" style="height: 70%"></div>
+                    <div class="bar" style="height: 45%"></div>
+                </div>
+                <div class="pulse-dot"></div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
