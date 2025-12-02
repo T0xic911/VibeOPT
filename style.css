@@ -571,3 +571,142 @@ footer {
     .copyright-bar { flex-direction: column; gap: 10px; text-align: center; }
     .legal-links a { margin: 0 10px; }
 }
+
+/* ===============  RESPONSIVE DESIGN  =============== */
+
+/* Tablets */
+@media (max-width: 992px) {
+
+    header#main-header nav {
+        display: none;
+    }
+
+    header#main-header {
+        justify-content: space-between;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+        height: auto;
+        padding-bottom: 80px;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .cta-group {
+        flex-direction: column;
+    }
+
+    .cards-grid,
+    .plans-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+
+    .cards-grid,
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-padding {
+        padding: 60px 5%;
+    }
+
+    #dashboard-ui {
+        grid-template-columns: 1fr;
+    }
+
+    .right-panel {
+        display: none;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        height: 70px;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .sidebar .nav-links {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    .sidebar .nav-links li {
+        margin-right: 20px;
+    }
+
+    .dash-main {
+        padding: 20px;
+    }
+}
+/* ================= AUTH PAGE STYLES (Login/Signup) ================= */
+#auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #0B0B0C 70%);
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    background: #1C1C1C;
+    padding: 40px;
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(88, 255, 180, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.auth-container h2 {
+    font-family: var(--font-head);
+    margin-bottom: 30px;
+    color: var(--color-mint);
+}
+
+.auth-container .input-group {
+    text-align: left;
+}
+
+.auth-container .btn-primary {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.auth-toggle-text {
+    margin-top: 20px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.auth-toggle-link {
+    color: var(--color-blue);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Ensure the forms can be toggled */
+.hidden-form {
+    display: none;
+}

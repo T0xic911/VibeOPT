@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeOpt | Login or Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="auth-page">
+    
+    <div class="auth-container">
+        <form id="login-form">
+            <h2>Welcome Back</h2>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="you@vibeopt.com" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" placeholder="********" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <p class="auth-toggle-text">
+                Don't have an account? <span class="auth-toggle-link" onclick="toggleForm('signup')">Sign Up</span>
+            </p>
+        </form>
+
+           <form id="signup-form" class="hidden-form">
+            <h2>Create Your VibeOpt Account</h2>
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="signup-username" placeholder="GamerTag" required>
+            </div>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="you@vibeopt.com" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" placeholder="********" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <p class="auth-toggle-text">
+                Already have an account? <span class="auth-toggle-link" onclick="toggleForm('login')">Login</span>
+            </p>
+        </form>
+    </div>
+
+    <script>
+        // CLIENT-SIDE AUTH SIMULATION
+function simulateLogin(formId) {
+    const form = document.getElementById(formId);
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        let usernameToStore = "Gamer"; // Default
+        
+        if (formId === 'signup-form') {
+            // Get username from signup form input
+            const usernameInput = document.getElementById('signup-username');
+            // Use the provided username, or a default if empty
+            usernameToStore = usernameInput.value || "New User"; 
+        } else {
+            // For login, we will simplify and assume the username is "Gamer" 
+            // until we have a real backend to fetch the correct name.
+            usernameToStore = "Gamer"; 
+        }
+
+        // 1. Simulate authentication success & SAVE USERNAME
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('username', usernameToStore); // <-- NEW LINE
+
+        // 2. Redirect to the protected dashboard
+        alert(`Success! Redirecting to Dashboard...`);
+        window.location.href = 'dashboard.html';
+    });
+}
+        
+        function toggleForm(mode) {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            
+            if (mode === 'login') {
+                loginForm.classList.remove('hidden-form');
+                signupForm.classList.add('hidden-form');
+            } else {
+                loginForm.classList.add('hidden-form');
+                signupForm.classList.remove('hidden-form');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            simulateLogin('login-form');
+            simulateLogin('signup-form');
+
+            // Check URL for mode (e.g., auth.html?mode=signup)
+            const params = new URLSearchParams(window.location.search);
+            const mode = params.get('mode');
+            if (mode === 'signup') {
+                toggleForm('signup');
+            } else {
+                toggleForm('login');
+            }
+        });
+    </script>
+</body>
+</html>

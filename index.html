@@ -9,6 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <!-- Firebase Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<!-- Your Scripts -->
+    <script src="firebase.js"></script>
+    <script src="auth.js"></script>
+    <script src="plans.js"></script>
+
 </head>
 <body>
 
@@ -23,7 +33,7 @@
             <a href="#pricing">Pricing</a>
             <a href="#contact">Contact</a>
         </nav>
-        <button class="btn btn-primary btn-glow" id="header-cta">Start For Free</button>
+       <button class="btn btn-primary btn-glow" id="header-cta" onclick="window.location.href='auth.html?mode=signup'">Start For Free</button>
     </header>
 
     <main id="landing-page">
@@ -35,7 +45,7 @@
                 <p class="subheading">AI-powered optimization that boosts FPS, stability, and responsiveness — effortlessly.</p>
                 
                 <div class="cta-group">
-                    <button class="btn btn-large btn-pulse" id="hero-cta">Start Free Optimization</button>
+                    <button class="btn btn-large btn-pulse" id="hero-cta" onclick="window.location.href='auth.html?mode=signup'">Start Free Optimization</button>
                     <a href="#features" class="secondary-link">Or explore the features <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>

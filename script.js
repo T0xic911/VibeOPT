@@ -90,3 +90,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCiYr8UgMSjsvjLqjS6pIGQofD8R2UoFxg",
+  authDomain: "vibeopt.firebaseapp.com",
+  projectId: "vibeopt",
+  storageBucket: "vibeopt.firebasestorage.app",
+  messagingSenderId: "83983179886",
+  appId: "1:83983179886:web:ff362ed9bbcd927c97067f",
+  measurementId: "G-3MHHMQQ4QJ"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+import { doc, setDoc } from "firebase/firestore";
+
+await setDoc(doc(db, "users", uid), {
+  email: user.email,
+  plan: "free"
+});
+
+

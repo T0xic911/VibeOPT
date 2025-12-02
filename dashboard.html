@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeOpt | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="dashboard-ui">
+        
+        <aside class="sidebar">
+            <div class="logo small">
+                <i class="fa-solid fa-bolt pulse-icon"></i>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></li>
+                <li><i class="fa-solid fa-rocket"></i> <span>Optimizer</span></li>
+                <li><i class="fa-solid fa-broom"></i> <span>Cleanup</span></li>
+                <li><i class="fa-solid fa-desktop"></i> <span>FPS Monitor</span></li>
+                <li><i class="fa-solid fa-gear"></i> <span>Settings</span></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button class="btn-text" id="logout-btn">Log Out</button>
+            </div>
+        </aside>
+
+        <main class="dash-main">
+            <header class="top-bar">
+              <div class="welcome">Welcome back, <span class="glow-text" id="welcome-username"></span>.</div>
+                <div class="actions">
+                    <button class="btn btn-primary btn-sm">Upgrade</button>
+                    <div class="user-profile"><i class="fa-solid fa-user"></i></div>
+                </div>
+            </header>
+
+            <div class="dash-content">
+                <div class="card status-card">
+                    <div class="status-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="status-text">
+                        <h3>System Status: Stable</h3>
+                        <p>Your PC is running smoothly.</p>
+                    </div>
+                    <div class="indicators">
+                        <span class="tag green">CPU Normal</span>
+                        <span class="tag green">GPU Normal</span>
+                    </div>
+                </div>
+
+                <div class="usage-grid">
+                    <div class="card stat-card">
+                        <div class="card-head">
+                            <i class="fa-solid fa-microchip"></i> <span>CPU</span>
+                        </div>
+                        <div class="big-num">43%</div>
+                        <div class="sub-stat">67°C</div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="card-head">
+                            <i class="fa-solid fa-gamepad"></i> <span>GPU</span>
+                        </div>
+                        <div class="big-num">58%</div>
+                        <div class="sub-stat">71°C</div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="card-head">
+                            <i class="fa-solid fa-memory"></i> <span>RAM</span>
+                        </div>
+                        <div class="big-num">7.2GB</div>
+                        <div class="sub-stat">of 16GB</div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="card-head">
+                            <i class="fa-solid fa-hard-drive"></i> <span>Disk</span>
+                        </div>
+                        <div class="progress-bar"><div class="fill" style="width: 60%"></div></div>
+                        <div class="sub-stat">Healthy</div>
+                    </div>
+                </div>
+
+                <div class="optimizer-area">
+                    <button class="optimize-btn">
+                        <div class="inner-circle">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>OPTIMIZE<br>NOW</span>
+                        </div>
+                        <div class="pulse-ring"></div>
+                    </button>
+                    <p class="ai-mode">AI Smart Mode: <span class="mint">ON</span></p>
+                </div>
+            </div>
+        </main>
+
+        <aside class="right-panel">
+            <div class="panel-header">Live Monitor</div>
+            <div class="temp-sensors">
+                <div class="sensor">
+                    <span>CPU</span> <span class="val">67°C</span>
+                </div>
+                <div class="sensor">
+                    <span>GPU</span> <span class="val">71°C</span>
+                </div>
+            </div>
+            
+            <div class="live-graph-container">
+                <div class="graph-bars">
+                    </div>
+                <div class="pulse-dot"></div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // ================= DASHBOARD AUTH GUARD & LOGIC =================
+
+         document.addEventListener('DOMContentLoaded', () => {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const storedUsername = localStorage.getItem('username'); // <-- NEW LINE
+
+            // 1. AUTHENTICATION GUARD (Client-side Simulation)
+            if (isLoggedIn !== 'true') {
+                // ... (كود التوجيه للخارج) ...
+            }
+
+            // 2. DISPLAY USERNAME IF LOGGED IN <-- NEW BLOCK
+            if (storedUsername) {
+                const usernameElement = document.getElementById('welcome-username');
+                if (usernameElement) {
+                    usernameElement.textContent = storedUsername;
+                }
+            }
+            
+            // 1. AUTHENTICATION GUARD (Client-side Simulation)
+            if (isLoggedIn !== 'true') {
+                alert('Access Denied. Please log in first.');
+                window.location.href = 'auth.html';
+            }
+
+            // 2. LOGOUT FUNCTIONALITY
+            const logoutBtn = document.getElementById('logout-btn');
+            logoutBtn.addEventListener('click', () => {
+                localStorage.removeItem('isLoggedIn');
+                window.location.href = 'index.html'; // Redirect to home page
+            });
+            
+            // 3. DASHBOARD INTERACTIVITY (The logic you already had)
+            const bars = document.querySelectorAll('.graph-bars .bar');
+            function startLiveGraph() {
+                const graphContainer = document.querySelector('.live-graph-container .graph-bars');
+                // Generate initial bars if not present
+                if(graphContainer.children.length === 0) {
+                    for (let i = 0; i < 7; i++) {
+                        const bar = document.createElement('div');
+                        bar.className = 'bar';
+                        graphContainer.appendChild(bar);
+                    }
+                }
+                const liveBars = document.querySelectorAll('.live-graph-container .bar');
+                
+                setInterval(() => {
+                    liveBars.forEach(bar => {
+                        const height = Math.floor(Math.random() * 70) + 20;
+                        bar.style.height = `${height}%`;
+                        bar.style.backgroundColor = height > 80 ? '#00C2FF' : '#58FFB4';
+                    });
+                }, 800);
+            }
+
+            startLiveGraph();
+        });
+    </script>
+</body>
+</html>
